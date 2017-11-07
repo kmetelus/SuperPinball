@@ -10,6 +10,8 @@ public class Launcher : MonoBehaviour {
 	public Slider powerSlider;
 	List<Rigidbody> ballList;
 	bool ballReady;
+  public GameObject cap;
+
 
 	void Start () {
     powerSlider.minValue = 0f;
@@ -47,6 +49,7 @@ public class Launcher : MonoBehaviour {
 	private void OnTriggerEnter(Collider o) {
 		if (o.gameObject.CompareTag("Ball")) {
 			ballList.Add(o.gameObject.GetComponent<Rigidbody>());
+      cap.SetActive(false);
 		}
 	}
 
