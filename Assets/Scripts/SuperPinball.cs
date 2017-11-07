@@ -2,7 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-// using UnityEngine.Quaternion;
+
+/*
+  **STUFF TO DO**
+  - Add a teleporter to the right of the pinball machine that will teleport
+    the ball to the top of the machine
+     > Use box collider + SpawnBall() code
+     > Need to make new traforms + randomization inside transform for ball spwan
+       location
+*/
 
 public class SuperPinball : MonoBehaviour {
 
