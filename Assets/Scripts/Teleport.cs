@@ -19,8 +19,8 @@ public class Teleport : MonoBehaviour {
 			Rigidbody ball = o.gameObject.GetComponent<Rigidbody>();
       if (triggerCount == toUse) {
           ball.position = new Vector3(location.position.x, location.position.y + 0.27f, location.position.z);
-          toUse *= 2;
-          Debug.Log("ENTER");
+          toUse++;
+          triggerCount = 0;
       }
 		}
 	}
