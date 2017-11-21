@@ -5,9 +5,9 @@ using UnityEngine;
 public class SideBumper : MonoBehaviour {
 
   public GameObject game;
+  public float force = 0.5f;
 
 	void OnCollisionEnter(Collision c) {
-		float force = 1.0f;
 		if (c.gameObject.tag == "Ball") {
 			Vector3 dir = transform.position;
 			dir = -dir.normalized;

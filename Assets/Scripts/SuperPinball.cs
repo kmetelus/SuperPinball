@@ -13,6 +13,8 @@ using UnityEngine.UI;
 */
 
 public class SuperPinball : MonoBehaviour {
+  private float t = 0f;
+  private float timeToSpawnAMonster = 10.0f;
 
 	public Transform ballZone;
 	public Transform ball;
@@ -20,6 +22,9 @@ public class SuperPinball : MonoBehaviour {
 	public Text scoreText;
 	public int ballsLeft;
 	public Text ballsText;
+
+  public Transform monsterSpawnZone;
+  public Transform monster;
 
 	public Text gameOverText;
 
@@ -31,6 +36,10 @@ public class SuperPinball : MonoBehaviour {
 	  Instantiate(ball, ballZone.transform.position + ballOffset, Quaternion.identity);
 	}
 
+  public void SpawnMonster() {
+    Instantiate(monster, monsterSpawnZone.position, Quaternion.identity);
+  }
+
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +50,14 @@ public class SuperPinball : MonoBehaviour {
 		gameOverText.enabled = false;
 
 	}
+
+  void Update() {
+    t += Time.deltaTime;
+    if (t >= timeToSpawnAMonster) {
+      SpawnMonster();
+      t = 0;
+    }
+  }
 
 	public void UpdateScore(int i) {
 		score += i;
