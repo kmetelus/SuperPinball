@@ -9,6 +9,7 @@ public class Cap : MonoBehaviour {
 	void OnTriggerEnter(Collider c) {
 		if (c.gameObject.tag == "Ball") {
 			cap.SetActive(true);
+      GameObject.FindWithTag("Game").GetComponent<SuperPinball>().gameStartOfficial = true;
 		}
 	}
 }

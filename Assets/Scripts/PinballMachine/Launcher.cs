@@ -49,6 +49,7 @@ public class Launcher : MonoBehaviour {
 	private void OnTriggerEnter(Collider o) {
 		if (o.gameObject.CompareTag("Ball")) {
 			ballList.Add(o.gameObject.GetComponent<Rigidbody>());
+      GameObject.FindWithTag("Game").GetComponent<SuperPinball>().gameStartOfficial = false;
       cap.SetActive(false);
 		}
 	}
